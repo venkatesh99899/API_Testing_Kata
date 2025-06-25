@@ -1,0 +1,28 @@
+package com.booking.api.restassured.config;
+
+import java.io.File;
+import java.util.Properties;
+import java.util.HashMap;
+import java.io.InputStream;
+import java.io.FileInputStream;
+
+public class LoadEnvronmentProperties {
+	public void loadPropertiesFromFile() {
+		try {
+			Config config								=	new Config();
+			Properties properties						=	new Properties();
+			
+			String fileLocation							=	config.getWorkingDirectory()+File.separator+config.getPropertyFilePath()+File.separator+config.getExecutionEnvironment()+".properties";
+			
+			InputStream inputStream						=	null;
+			
+			properties.load(new FileInputStream(fileLocation));
+			
+		}catch(NumberFormatException nfe) {
+			nfe.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

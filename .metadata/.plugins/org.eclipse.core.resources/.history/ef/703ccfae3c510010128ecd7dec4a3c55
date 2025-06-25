@@ -1,0 +1,90 @@
+package com.api.restassured.engine;
+
+import java.nio.charset.Charset;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class Reporter {
+	public ExtentTest EXTENTTEST;
+	public String REPORT_NAME;
+	public String CURRENT_ROW_OF_EXECUTION;
+	public int EXECUTION_OFFSET								=	0;
+	public boolean TESTPASSED								=	true;
+	public int REPORTING_ROW								=	0;
+	public static boolean EXECUTION_STATUS					=	false;
+	
+	
+	public void setExecutionStatus() {
+		try {
+			EXECUTION_STATUS				=	TESTPASSED;
+		}catch(NullPointerException npe) {
+			npe.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean getExecutionStatus() {
+		return EXECUTION_STATUS;
+	}
+	
+	public void setReportPassStep(String PASSED_STATUS) {
+		
+	}
+	
+	public void setReportFailStep(String PASSED_STATUS) {
+		TESTPASSED		=	false;
+	}
+	
+	public void setReportWarningStep(String PASSED_STATUS) {
+		
+	}
+	public void setReportInfoStep(String PASSED_STATUS) {
+		
+	}
+	public void setReportingColor(String REPORTING_MESSAGE, LogStatus LS) {
+		try {
+			String COLOR	=	"";
+			switch(LS) {
+			case ERROR:
+				break;
+			case FAIL:
+				COLOR		=	"#ff0000";
+				break;
+			case INFO:
+				COLOR		=	"#800000";
+				break;
+			case PASS:
+				COLOR		=	"#008000";
+				break;
+			case SKIP:
+				break;
+			case UNKNOWN:
+				break;
+			case WARNING:
+				COLOR		=	"#ffa700";
+			}
+		}catch(NumberFormatException npe) {
+			npe.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void ReporterLog(String STEP_STATUS, LogStatus LS) {
+		try {
+			if(LS.name().equalsIgnoreCase("FAIL")) {
+				TESTPASSED			=	false;
+			}
+			Charset UTF8_CHARSET	=	Charset.forName("UTF-8");
+			Charset USASCII_CHARSET	=	Charset.forName("ISO-8859-1");
+			EXTENTTEST.log(LS, STEP_STATUS);
+			String TO_REPORT_DATA	=	"[ Reported ] " + new String((LS.name() + "\t" + STEP_STATUS).getBytes(UTF8_CHARSET), USASCII_CHARSET);
+			org.testng.Reporter.log(TO_REPORT_DATA);
+			REPORTING_ROW +=	1;
+		}catch(NumberFormatException npe) {
+			npe.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

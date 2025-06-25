@@ -1,0 +1,22 @@
+package com.api.restassured.reusables;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+/*
+ * 
+ * This Reusable class contains all the resuable methods
+ */
+
+public class Reusables {
+	public void getDateFormat(String DATE_FORMAT, int NUMBER_OF_DAYS) {
+		try {
+			Date date							=	new Date();
+			SimpleDateFormat sdf				=	new SimpleDateFormat();
+			Calender calender					=	
+		}catch(NullPointerException npe) {
+			
+		}catch(Exception e) {
+			
+		}
+	}
+}

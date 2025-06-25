@@ -1,0 +1,13 @@
+package com.api.restassured.reusables;
+
+public class Reusables {
+	public void getDateFormat() {
+		try {
+			
+		}catch(NullPointerException npe) {
+			
+		}catch(Exception e) {
+			
+		}
+	}
+}

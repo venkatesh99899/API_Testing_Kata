@@ -1,0 +1,7 @@
+# API_Testing_Kata
+API Framework
+Hotel Booking Rest API Testing using Rest Assured
+
+
+This project is an sample Rest API test automation framework for Retrieving the Hotel Booking summary details using Rest Assured, Cucumber, TestNG, and Maven. This project gives the basic example of how to retrieve booking summary details by using room id.
+

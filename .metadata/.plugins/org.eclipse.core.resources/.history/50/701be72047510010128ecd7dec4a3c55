@@ -1,0 +1,33 @@
+package com.booking.api.restassured.config;
+
+import java.io.File;
+
+public class Config {
+	/*
+	 * Config class contains all the system configuration settings
+	 * Created By : Venky
+	 * Created On : 24/06/2025
+	 */
+	public static String WORKING_DIRECTORY			=	"";
+	public static String PROPERTY_FILE_PATH			=	"";
+	public static String ENVIRONMENT_NAME			=	"";
+	
+	public static void setWorkingDirectory() {
+		try {
+			WORKING_DIRECTORY						=	System.getProperty("user.dir");
+		}catch(NullPointerException npe) {
+			npe.printStackTrace();
+		}
+	}
+	public static void setPropertyFilePath() {
+		try {
+			PROPERTY_FILE_PATH						=	"PropertyFiles"+File.separator+"EnvironmentProperties"+File.separator+;
+		}catch(NullPointerException npe) {
+			npe.printStackTrace();
+		}
+	}
+	public static String getWorkingDirectory() {
+		return WORKING_DIRECTORY;
+	}
+	
+}

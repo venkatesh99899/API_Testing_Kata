@@ -1,0 +1,7 @@
+package com.api.restassured.engine;
+
+import com.api.restassured.config.Config;
+
+public class CommonStaticVariables extends Config{
+	
+}

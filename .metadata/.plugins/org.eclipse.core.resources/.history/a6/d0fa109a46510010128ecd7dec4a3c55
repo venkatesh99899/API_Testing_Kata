@@ -1,0 +1,14 @@
+package com.booking.api.restassured.config;
+
+public class LoadEnvronmentProperties {
+	public void loadPropertiesFromFile() {
+		try {
+			Config cofig				=	new Config();
+			
+		}catch(NumberFormatException nfe) {
+			nfe.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

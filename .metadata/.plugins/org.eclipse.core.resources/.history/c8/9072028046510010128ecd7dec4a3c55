@@ -1,0 +1,7 @@
+package com.booking.api.restassured.config;
+
+public class LoadEnvronmentProperties {
+	public void loadPropertiesFromFile() {
+		
+	}
+}

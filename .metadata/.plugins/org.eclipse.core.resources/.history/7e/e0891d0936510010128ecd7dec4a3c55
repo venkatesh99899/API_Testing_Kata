@@ -1,0 +1,13 @@
+package com.api.restassured.reusables;
+
+public class Reusables {
+	public void getDateFormat(String DATE_FORMAT, int NUMBER_OF_DAYS) {
+		try {
+			
+		}catch(NullPointerException npe) {
+			
+		}catch(Exception e) {
+			
+		}
+	}
+}
