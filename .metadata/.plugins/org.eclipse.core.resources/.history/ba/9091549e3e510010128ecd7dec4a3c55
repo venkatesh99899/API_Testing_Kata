@@ -1,9 +1,0 @@
-package com.api.restassured.engine;
-
-import java.io.File;
-
-import com.api.restassured.config.Config;
-
-public class CommonStaticVariables extends Config{
-	public static String REPORTING_PARENT_FOLDER 					=	Config.getWorkingDirectory()+File.separator+"Report"+File.separator;
-}

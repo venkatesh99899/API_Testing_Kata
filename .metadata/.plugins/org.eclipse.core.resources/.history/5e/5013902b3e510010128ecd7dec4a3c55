@@ -1,5 +1,0 @@
-package com.api.restassured.engine;
-
-public class CommonStaticVariables {
-
-}
